@@ -46,6 +46,19 @@ LocationSchema = Schema((
 ))
 
 MonetEvent.schema += LocationSchema.copy()
+MonetEvent.schema.moveField('region', after='country')
+MonetEvent.schema.moveField('province', after='region')
+MonetEvent.schema.moveField('municipality', after='province')
+MonetEvent.schema.moveField('locality', after='municipality')
+MonetEvent.schema.moveField('zipcode', after='locality')
+MonetEvent.schema.moveField('contactPhone', after='zipcode')
+MonetEvent.schema.moveField('fax', after='contactPhone')
+MonetEvent.schema.moveField('eventUrl', after='fax')
+MonetEvent.schema.moveField('contactEmail', after='eventUrl')
+MonetEvent.schema.moveField('text', after='contactEmail')
+MonetEvent.schema.moveField('referenceEntities', after='text')
+MonetEvent.schema.moveField('annotations', after='referenceEntities')
+
 MonetEvent.schema['country'].default = 'Italia'
 
 registerType(MonetEvent, PROJECTNAME)
