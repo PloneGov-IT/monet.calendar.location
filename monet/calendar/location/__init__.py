@@ -1,5 +1,9 @@
 from monet.calendar.event.content.event import MonetEvent
 from monet.calendar.event.config import PROJECTNAME
+from Products.MasterSelectWidget.MasterSelectWidget import MasterSelectWidget
+from redturtle.entiterritoriali import _all_regioni, _all_province, _all_comuni, EntiVocabulary
+from redturtle.entiterritoriali.vocabulary import mapDisplayList
+from Products.Archetypes.atapi import DisplayList
 
 try:
     from Products.LinguaPlone.public import *
@@ -10,29 +14,57 @@ except ImportError:
 from zope.i18nmessageid import MessageFactory
 locationMessageFactory = MessageFactory('monet.calendar.location')
 
+def monetVocabMap(list):
+    result = [("",locationMessageFactory(u'label_unspecified', default=u'-- Unspecified --'))]
+    return mapDisplayList(list, result)
+
+REGIONI = DisplayList(monetVocabMap(_all_regioni))
+PROVINCE = DisplayList(monetVocabMap(_all_province))
+COMUNI = DisplayList(monetVocabMap(_all_comuni))
+
+def getVocabProv(self,region):
+    province = EntiVocabulary.province4regione(region)
+    return DisplayList(monetVocabMap(province))
+    
+def getVocabMun(self,province):
+    municipality = EntiVocabulary.comuni4provincia(province)
+    return DisplayList(monetVocabMap(municipality))
+
 LocationSchema = Schema((
 
     StringField('region',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
-                widget=StringWidget(
+                default='08',
+                vocabulary=REGIONI,
+                widget=MasterSelectWidget(
                         label = locationMessageFactory(u'label_region', default=u'Region'),
+                        slave_fields = ({'name':'province',
+                                         'action': 'vocabulary',
+                                         'vocab_method': 'getVocabProvince',
+                                         'control_param': 'region'},)
                         )),
                         
     StringField('province',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
-                widget=StringWidget(
+                vocabulary=PROVINCE,
+                widget=MasterSelectWidget(
                         label = locationMessageFactory(u'label_province', default=u'Province'),
+                        slave_fields = ({'name':'municipality',
+                                         'action': 'vocabulary',
+                                         'vocab_method': 'getVocabMunicipality',
+                                         'control_param': 'province'},)
                         )),
                         
     StringField('municipality',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
-                widget=StringWidget(
+                vocabulary=COMUNI,
+                widget=MasterSelectWidget(
                         label = locationMessageFactory(u'label_municipality', default=u'Municipality'),
                         )),
                         
@@ -60,6 +92,9 @@ MonetEvent.schema.moveField('referenceEntities', after='text')
 MonetEvent.schema.moveField('annotations', after='referenceEntities')
 
 MonetEvent.schema['country'].default = 'Italia'
+
+MonetEvent.getVocabProvince=getVocabProv
+MonetEvent.getVocabMunicipality=getVocabMun
 
 registerType(MonetEvent, PROJECTNAME)
 

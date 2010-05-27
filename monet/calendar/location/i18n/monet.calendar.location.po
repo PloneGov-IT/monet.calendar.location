@@ -25,3 +25,6 @@ msgstr "Comune"
 
 msgid "label_locality"
 msgstr "Località"
+
+msgid "label_unspecified"
+msgstr "-- Non specificato --"

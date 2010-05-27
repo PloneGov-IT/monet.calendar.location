@@ -24,6 +24,7 @@ setup(name='monet.calendar.location',
       install_requires=[
           'setuptools',
           'Products.MasterSelectWidget',
+          'redturtle.entiterritoriali',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
