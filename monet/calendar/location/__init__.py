@@ -6,7 +6,8 @@ from redturtle.entiterritoriali.vocabulary import mapDisplayList
 from Products.Archetypes.atapi import DisplayList
 
 try:
-    from Products.LinguaPlone.public import *
+    # turn off
+    from Products.LinguaPloneXXX.public import *
 except ImportError:
     # No multilingual support
     from Products.Archetypes.atapi import *
