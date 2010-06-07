@@ -25,6 +25,8 @@ setup(name='monet.calendar.location',
           'setuptools',
           'Products.MasterSelectWidget',
           'redturtle.entiterritoriali',
+          'monet.calendar.event',
+          'monet.calendar.extensions',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
