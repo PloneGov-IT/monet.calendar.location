@@ -19,6 +19,7 @@
 	  title="Monet Calendar Location configuration"
 	  description="Configures Monet Location Event properties"
 	  handler="monet.calendar.location.exportimport.import_various">
+	  	<depends name="propertiestool" />
   </genericsetup:importStep>
 
 </configure>
