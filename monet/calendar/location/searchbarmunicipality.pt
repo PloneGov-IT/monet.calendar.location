@@ -106,6 +106,7 @@
 					name="getMunicipality"
 					id="getMunicipality"
 					type="text"
+					size="15"
 					tal:attributes="value request/getMunicipality|default_municipality|nothing"
 					/>
 		      </td>
