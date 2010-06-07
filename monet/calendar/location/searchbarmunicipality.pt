@@ -19,6 +19,7 @@
 		      <th><label for="getEventType" i18n:translate="label_in">In</label></th>
 		      <th><label for="fromDay" i18n:translate="label_from">From</label></th>
 		      <th><label for="toDay" i18n:translate="label_to">To</label></th>
+		      <th><label for="getMunicipality" i18n:domain="monet.calendar.location" i18n:translate="label_municipality">Municipality</label></th>
 		      <th />
 			</tr>
 			<tr>
@@ -98,6 +99,15 @@
                   				tal:attributes="value year/value; selected year/selected"
                   				tal:content="year/id">year</option>
 				</select>
+		      </td>
+		      <td tal:define="site_props here/portal_properties/monet_calendar_event_properties;
+		      				  default_municipality site_props/default_municipality">
+		      	  <input class="searchBarMunicipality"
+					name="getMunicipality"
+					id="getMunicipality"
+					type="text"
+					tal:attributes="value request/getMunicipality|default_municipality|nothing"
+					/>
 		      </td>
 		      <td>
 		      	  <input class="searchButton"
