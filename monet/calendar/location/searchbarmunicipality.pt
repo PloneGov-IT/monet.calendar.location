@@ -109,7 +109,7 @@
 	                            tal:repeat="municipality municipality_list"
 	                            tal:content="python: view.getMunicipalityValue(municipality)"
 	                            tal:attributes="value municipality;
-	                            				selected python: municipality == '036023'; 
+	                            				selected python: municipality == view.getDefaultMunicipality(); 
 	                            				id municipality">
 								dummy
 						</option>

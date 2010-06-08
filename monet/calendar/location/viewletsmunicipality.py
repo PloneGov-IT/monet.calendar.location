@@ -9,3 +9,12 @@ class SearchBarMunicipality(SearchBar):
     
     def getMunicipalityValue(self,key):
         return COMUNI.getValue(key)
+    
+    def getDefaultMunicipality(self):
+        
+        form = self.request.form
+        
+        if form.has_key('getMunicipality'):
+            return form.get('getMunicipality')
+        else:
+            return '036023'
