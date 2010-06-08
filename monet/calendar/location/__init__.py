@@ -20,8 +20,8 @@ def monetVocabMap(list):
     return mapDisplayList(list, result)
 
 REGIONI = DisplayList(monetVocabMap(_all_regioni))
-PROVINCE = DisplayList(monetVocabMap(_all_province))
-COMUNI = DisplayList(monetVocabMap(_all_comuni))
+PROVINCE = DisplayList(monetVocabMap(EntiVocabulary.province4regione("08")))
+COMUNI = DisplayList(monetVocabMap(EntiVocabulary.comuni4provincia("MO")))
 
 def getVocabProv(self,region):
     province = EntiVocabulary.province4regione(region)
@@ -52,6 +52,7 @@ LocationSchema = Schema((
                 searchable=False,
                 languageIndependent=True,
                 vocabulary=PROVINCE,
+                default="MO",
                 widget=MasterSelectWidget(
                         label = locationMessageFactory(u'label_province', default=u'Province'),
                         slave_fields = ({'name':'municipality',
@@ -65,8 +66,10 @@ LocationSchema = Schema((
                 searchable=False,
                 languageIndependent=True,
                 vocabulary=COMUNI,
+                default="036023",
                 widget=SelectionWidget(
                         label = locationMessageFactory(u'label_municipality', default=u'Municipality'),
+                        format="select",
                         )),
                         
     StringField('locality',
