@@ -5,6 +5,7 @@
     i18n_domain="monet.calendar.location">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <include package=".browser" />
   
   <genericsetup:registerProfile
       name="default"

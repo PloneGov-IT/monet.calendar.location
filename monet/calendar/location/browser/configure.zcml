@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="monet.calendar.location">
+
+  <include package="plone.app.contentmenu" />
+	
+  <browser:resourceDirectory
+  	name="monet.calendar.location.stylesheets"
+	directory="stylesheets"
+	/>
+
+</configure>
