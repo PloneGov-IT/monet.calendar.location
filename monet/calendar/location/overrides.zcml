@@ -7,7 +7,7 @@
     for="monet.calendar.event.interfaces.IMonetCalendar"
 	name="monet.bar.searchevents"
 	manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
-	class="monet.calendar.extensions.browser.viewlets.SearchBar"
+	class=".viewletsmunicipality.SearchBarMunicipality"
     template="searchbarmunicipality.pt"
     permission="zope2.View"
     />

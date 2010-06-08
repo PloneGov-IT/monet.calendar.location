@@ -19,7 +19,7 @@
 		      <th><label for="getEventType" i18n:translate="label_in">In</label></th>
 		      <th><label for="fromDay" i18n:translate="label_from">From</label></th>
 		      <th><label for="toDay" i18n:translate="label_to">To</label></th>
-		      <th><label for="getMunicipality" i18n:domain="monet.calendar.location" i18n:translate="label_municipality">Municipality</label></th>
+		      <th class="municipalitySection"><label for="getMunicipality" i18n:domain="monet.calendar.location" i18n:translate="label_municipality">Municipality</label></th>
 		      <th />
 			</tr>
 			<tr>
@@ -100,15 +100,20 @@
                   				tal:content="year/id">year</option>
 				</select>
 		      </td>
-		      <td tal:define="site_props here/portal_properties/monet_calendar_event_properties;
-		      				  default_municipality site_props/default_municipality">
-		      	  <input class="searchBarMunicipality"
+		      <td class="municipalitySection">
+		      	<select class="SearchBarMunicipality"
 					name="getMunicipality"
-					id="getMunicipality"
-					type="text"
-					size="15"
-					tal:attributes="value request/getMunicipality|default_municipality|nothing"
-					/>
+	                id="getMunicipality"
+	                tal:define="municipality_list view/getMunicipalityKeysValues;">
+	                    <option value="#"
+	                            tal:repeat="municipality municipality_list"
+	                            tal:content="python: view.getMunicipalityValue(municipality)"
+	                            tal:attributes="value municipality;
+	                            				selected python: municipality == '036023'; 
+	                            				id municipality">
+								dummy
+						</option>
+				</select>
 		      </td>
 		      <td>
 		      	  <input class="searchButton"
