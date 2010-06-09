@@ -116,6 +116,16 @@
 	                    	<tbody>
 	                        	<tr>
 									<td><metal:fieldMacro use-macro="python:here.widget('country', mode='edit')" /></td>
+									<td><metal:fieldMacro use-macro="python:here.widget('region', mode='edit')" /></td>
+									<td><metal:fieldMacro use-macro="python:here.widget('province', mode='edit')" /></td>
+	                            </tr>
+	                        </tbody>
+	                	</table>
+	                    <table>
+	                    	<tbody>
+	                        	<tr>
+									<td><metal:fieldMacro use-macro="python:here.widget('municipality', mode='edit')" /></td>
+									<td><metal:fieldMacro use-macro="python:here.widget('locality', mode='edit')" /></td>
 									<td><metal:fieldMacro use-macro="python:here.widget('zipcode', mode='edit')" /></td>
 	                            </tr>
 	                        </tbody>

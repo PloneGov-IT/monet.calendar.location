@@ -78,6 +78,7 @@ LocationSchema = Schema((
                 languageIndependent=True,
                 widget=StringWidget(
                         label = locationMessageFactory(u'label_locality', default=u'Locality'),
+                        size = 50
                         )),
 ))
 
