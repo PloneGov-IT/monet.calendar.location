@@ -160,43 +160,43 @@
 			</div>
         </div>
         
-        <div class="fieldEvent countryIt">
+        <div tal:condition="here/getCountry" class="fieldEvent countryIt">
             <metal:field use-macro="python:here.widget('country', mode='view')">
 	        Country
 			</metal:field>
         </div>
         
-        <div class="fieldEvent regionEm">
+        <div tal:condition="here/getRegion" class="fieldEvent regionEm">
             <metal:field use-macro="python:here.widget('region', mode='view')">
 	        Region
 			</metal:field>
         </div>
         
-        <div class="fieldEvent provinceMo">
+        <div tal:condition="here/getProvince" class="fieldEvent provinceMo">
             <metal:field use-macro="python:here.widget('province', mode='view')">
 	        Province
 			</metal:field>
         </div>
         
-        <div class="fieldEvent municipalityMo">
+        <div tal:condition="here/getMunicipality" class="fieldEvent municipalityMo">
             <metal:field use-macro="python:here.widget('municipality', mode='view')">
 	        Municipality
 			</metal:field>
         </div>
         
-        <div class="fieldEvent localityLo">
+        <div tal:condition="here/getLocality" class="fieldEvent localityLo">
             <metal:field use-macro="python:here.widget('locality', mode='view')">
 	        Locality
 			</metal:field>
         </div>
         
-        <div class="fieldEvent zipCode">
+        <div tal:condition="here/getZipcode" class="fieldEvent zipCode">
             <metal:field use-macro="python:here.widget('zipcode', mode='view')">
 	        Zip code
 			</metal:field>
         </div>
         
-        <div class="fieldEvent bText">
+        <div tal:condition="here/getText" class="fieldEvent bText">
 	        <metal:field use-macro="python:here.widget('text', mode='view')">
 	        Body text
 	        </metal:field>
