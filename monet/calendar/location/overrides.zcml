@@ -12,4 +12,11 @@
     permission="zope2.View"
     />
     
+  <browser:page
+	for="monet.calendar.event.interfaces.IMonetEvent"
+	name="event_view"
+	template="browser/event_view.pt"
+	permission="zope2.View"
+	/>
+    
 </configure>
