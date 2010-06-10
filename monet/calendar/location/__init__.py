@@ -97,6 +97,7 @@ MonetEvent.schema.moveField('referenceEntities', after='text')
 MonetEvent.schema.moveField('annotations', after='referenceEntities')
 
 MonetEvent.schema['country'].default = 'Italia'
+MonetEvent.schema['eventType'].widget.macro = 'twocolumnsmultiselection'
 
 MonetEvent.getVocabProvince=getVocabProv
 MonetEvent.getVocabMunicipality=getVocabMun
