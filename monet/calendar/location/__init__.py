@@ -68,7 +68,7 @@ LocationSchema = Schema((
                 vocabulary=COMUNI,
                 default="036023",
                 widget=SelectionWidget(
-                        label = locationMessageFactory(u'label_municipality', default=u'Municipality'),
+                        label = locationMessageFactory(u'label_municipality', default=u'Location'),
                         format="select",
                         )),
                         
