@@ -28,7 +28,7 @@
              tal:condition="not:field/required|nothing"
              tal:attributes="name string:$fieldName:default:list;" />
              
-      <tal:multvocab tal:condition="python:format=='checkbox'"
+      <tal:multvocab tal:condition="python:format=='checkbox' and vocab"
       				 tal:define="first_vocab python:vocab[:len(vocab)/2];
       							 rest_vocab python: len(vocab)%2 and vocab[len(vocab)/2] or [];
 								 second_vocab python:vocab[len(vocab)/2  + len(vocab)%2:]">
