@@ -32,7 +32,7 @@
       				 tal:define="first_vocab python:vocab[:len(vocab)/2];
       							 rest_vocab python: len(vocab)%2 and vocab[len(vocab)/2] or [];
 								 second_vocab python:vocab[len(vocab)/2  + len(vocab)%2:]">
-	      <table>
+	      <table class="eventTypeTable">
 	      	<tbody>
 	      		<tr tal:repeat="item first_vocab">
 	      			<tal:number define="index repeat/item/number;
