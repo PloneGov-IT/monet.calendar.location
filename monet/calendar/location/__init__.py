@@ -4,13 +4,7 @@ from Products.MasterSelectWidget.MasterSelectWidget import MasterSelectWidget
 from redturtle.entiterritoriali import _all_regioni, _all_province, _all_comuni, EntiVocabulary
 from redturtle.entiterritoriali.vocabulary import mapDisplayList
 from Products.Archetypes.atapi import DisplayList
-
-try:
-    # turn off
-    from Products.LinguaPloneXXX.public import *
-except ImportError:
-    # No multilingual support
-    from Products.Archetypes.atapi import *
+from Products.Archetypes import atapi
 
 from zope.i18nmessageid import MessageFactory
 locationMessageFactory = MessageFactory('monet.calendar.location')
@@ -31,9 +25,9 @@ def getVocabMun(self,province):
     municipality = EntiVocabulary.comuni4provincia(province)
     return DisplayList(monetVocabMap(municipality))
 
-LocationSchema = Schema((
+LocationSchema = atapi.Schema((
 
-    StringField('region',
+    atapi.StringField('region',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
@@ -47,7 +41,7 @@ LocationSchema = Schema((
                                          'control_param': 'region'},)
                         )),
                         
-    StringField('province',
+    atapi.StringField('province',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
@@ -61,22 +55,22 @@ LocationSchema = Schema((
                                          'control_param': 'province'},)
                         )),
                         
-    StringField('municipality',
+    atapi.StringField('municipality',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
                 vocabulary=COMUNI,
                 default="036023",
-                widget=SelectionWidget(
+                widget=atapi.SelectionWidget(
                         label = locationMessageFactory(u'label_municipality', default=u'Location'),
                         format="select",
                         )),
                         
-    StringField('locality',
+    atapi.StringField('locality',
                 required=False,
                 searchable=False,
                 languageIndependent=True,
-                widget=StringWidget(
+                widget=atapi.StringWidget(
                         label = locationMessageFactory(u'label_locality', default=u'Locality'),
                         size = 50
                         )),
@@ -104,7 +98,7 @@ MonetEvent.getVocabMunicipality=getVocabMun
 
 print "monet.calendar.location: Added fields region, province, municipality and locality to MonetEvent"
 
-registerType(MonetEvent, PROJECTNAME)
+atapi.registerType(MonetEvent, PROJECTNAME)
 
 
 def initialize(context):
