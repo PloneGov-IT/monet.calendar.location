@@ -102,6 +102,8 @@ MonetEvent.schema['eventType'].widget.macro = 'twocolumnsmultiselection'
 MonetEvent.getVocabProvince=getVocabProv
 MonetEvent.getVocabMunicipality=getVocabMun
 
+print "monet.calendar.location: Added fields region, province, municipality and locality to MonetEvent"
+
 registerType(MonetEvent, PROJECTNAME)
 
 
