@@ -5,6 +5,8 @@
     i18n_domain="monet.calendar.location">
 
   <five:registerPackage package="." initialize=".initialize" />
+  <include package="Products.MasterSelectWidget" />
+  
   <include package=".browser" />
   
   <include file="skins.zcml"/>
