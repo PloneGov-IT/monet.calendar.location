@@ -5,7 +5,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="plone">
-  <head><title></title></head>
+
   <body>
 
     <div metal:define-macro="header">
@@ -103,6 +103,7 @@
 	                    <metal:fieldMacro use-macro="python:here.widget('description', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('eventType', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('image', mode='edit')" />
+						<metal:fieldMacro use-macro="python:here.widget('imageAlt', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('startDate', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('endDate', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('cadence', mode='edit')" />
@@ -148,7 +149,9 @@
 	                	</table>
 	                	<metal:fieldMacro use-macro="python:here.widget('text', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('referenceEntities', mode='edit')" />
+
 	                    <metal:fieldMacro use-macro="python:here.widget('annotations', mode='edit')" />
+
 					</tal:main_customized>
 	                <tal:main_notcustomized condition="python:fieldsetid!='default'">
 	                  <tal:fields repeat="field python:schematas[fieldset].editableFields(here, visible_only=True)">
