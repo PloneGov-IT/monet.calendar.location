@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-05 10:49+0000\n"
+"POT-Creation-Date: 2010-07-05 12:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,11 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: monet.calendar.location\n"
+
+#. Default: "Enter the physical location of the event (eg Novi Sad). Complete only if different from the address."
+#: ./__init__.py:96
+msgid "help_location"
+msgstr ""
 
 #. Default: "Use to attach to the event its program, invitation card, etc..."
 #: ./__init__.py:95
