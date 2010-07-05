@@ -7,10 +7,10 @@ from Products.Archetypes.atapi import DisplayList
 from Products.Archetypes import atapi
 
 from zope.i18nmessageid import MessageFactory
-locationMessageFactory = MessageFactory('monet.calendar.location')
+_ = locationMessageFactory = MessageFactory('monet.calendar.location')
 
 def monetVocabMap(list):
-    result = [("",locationMessageFactory(u'label_unspecified', default=u'-- Unspecified --'))]
+    result = [("",_(u'label_unspecified', default=u'-- Unspecified --'))]
     return mapDisplayList(list, result)
 
 REGIONI = DisplayList(monetVocabMap(_all_regioni))
@@ -34,7 +34,7 @@ LocationSchema = atapi.Schema((
                 default='08',
                 vocabulary=REGIONI,
                 widget=MasterSelectWidget(
-                        label = locationMessageFactory(u'label_region', default=u'Region'),
+                        label = _(u'label_region', default=u'Region'),
                         slave_fields = ({'name':'province',
                                          'action': 'vocabulary',
                                          'vocab_method': 'getVocabProvince',
@@ -48,7 +48,7 @@ LocationSchema = atapi.Schema((
                 vocabulary=PROVINCE,
                 default="MO",
                 widget=MasterSelectWidget(
-                        label = locationMessageFactory(u'label_province', default=u'Province'),
+                        label = _(u'label_province', default=u'Province'),
                         slave_fields = ({'name':'municipality',
                                          'action': 'vocabulary',
                                          'vocab_method': 'getVocabMunicipality',
@@ -62,7 +62,7 @@ LocationSchema = atapi.Schema((
                 vocabulary=COMUNI,
                 default="036023",
                 widget=atapi.SelectionWidget(
-                        label = locationMessageFactory(u'label_municipality', default=u'Location'),
+                        label = _(u'label_municipality', default=u'Location'),
                         format="select",
                         )),
                         
@@ -71,7 +71,7 @@ LocationSchema = atapi.Schema((
                 searchable=False,
                 languageIndependent=True,
                 widget=atapi.StringWidget(
-                        label = locationMessageFactory(u'label_locality', default=u'Locality'),
+                        label = _(u'label_locality', default=u'Locality'),
                         size = 50
                         )),
 ))
@@ -92,6 +92,7 @@ MonetEvent.schema.moveField('annotations', after='referenceEntities')
 
 MonetEvent.schema['country'].default = 'Italia'
 MonetEvent.schema['eventType'].widget.macro = 'twocolumnsmultiselection'
+MonetEvent.schema['relatedItems'].widget.description = _(u'help_relatedItems',default=u'Use to attach to the event its program, invitation card, etc...')
 
 MonetEvent.getVocabProvince=getVocabProv
 MonetEvent.getVocabMunicipality=getVocabMun
