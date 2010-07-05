@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: monet.calendar.location\n"
-"POT-Creation-Date: 2010-07-05 12:01+0000\n"
+"POT-Creation-Date: 2010-07-05 12:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: Federica D'Elia <federica.delia@redturtle.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,6 +13,10 @@ msgstr ""
 "Language-Name: Italian\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: monet.calendar.location\n"
+
+#: ./__init__.py:13
+msgid "-- Unspecified --"
+msgstr "-- Non specificato --"
 
 #. Default: "Enter the physical location of the event (eg Novi Sad). Complete only if different from the address."
 #: ./__init__.py:96
@@ -44,9 +48,4 @@ msgstr "Provincia"
 #: ./__init__.py:37
 msgid "label_region"
 msgstr "Regione"
-
-#. Default: "-- Unspecified --"
-#: ./__init__.py:13
-msgid "label_unspecified"
-msgstr "-- Non specificato --"
 

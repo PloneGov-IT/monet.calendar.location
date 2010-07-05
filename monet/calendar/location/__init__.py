@@ -10,7 +10,7 @@ from zope.i18nmessageid import MessageFactory
 _ = locationMessageFactory = MessageFactory('monet.calendar.location')
 
 def monetVocabMap(list):
-    result = [("",_(u'label_unspecified', default=u'-- Unspecified --'))]
+    result = [(u"",_(u'-- Unspecified --'))]
     return mapDisplayList(list, result)
 
 REGIONI = DisplayList(monetVocabMap(_all_regioni))
