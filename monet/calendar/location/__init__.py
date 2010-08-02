@@ -93,7 +93,8 @@ MonetEvent.schema.moveField('annotations', after='referenceEntities')
 MonetEvent.schema['country'].default = 'Italia'
 MonetEvent.schema['eventType'].widget.macro = 'twocolumnsmultiselection'
 MonetEvent.schema['relatedItems'].widget.description = _(u'help_relatedItems',default=u'Use to attach to the event its program, invitation card, etc...')
-MonetEvent.schema['location'].widget.description = _(u'help_location',default=u"Enter the physical location of the event (eg Novi Sad). Complete only if different from the address.")
+MonetEvent.schema['location'].widget.description = _(u'help_location',default=u"Enter the physical location where the event takes place (eg Novi Sad, Palazzina dei Giardini, etc.). Complete only if different from the address.")
+MonetEvent.schema['referenceEntities'].widget.description = _(u'help_referenceentities', default=u'Indicate the promoters and organizers of the event. (eg: City of Modena, San Carlo Foundation, etc.).')
 
 MonetEvent.getVocabProvince=getVocabProv
 MonetEvent.getVocabMunicipality=getVocabMun

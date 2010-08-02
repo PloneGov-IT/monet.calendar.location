@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-07-05 12:29+0000\n"
+"POT-Creation-Date: 2010-08-02 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,9 +21,14 @@ msgstr ""
 msgid "-- Unspecified --"
 msgstr ""
 
-#. Default: "Enter the physical location of the event (eg Novi Sad). Complete only if different from the address."
+#. Default: "Enter the physical location where the event takes place (eg Novi Sad, Palazzina dei Giardini, etc.). Complete only if different from the address."
 #: ./__init__.py:96
 msgid "help_location"
+msgstr ""
+
+#. Default: "Indicate the promoters and organizers of the event. (eg: City of Modena, San Carlo Foundation, etc.)."
+#: ./__init__.py:97
+msgid "help_referenceentities"
 msgstr ""
 
 #. Default: "Use to attach to the event its program, invitation card, etc..."
