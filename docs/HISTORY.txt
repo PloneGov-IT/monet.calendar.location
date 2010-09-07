@@ -1,12 +1,17 @@
 Changelog
 =========
 
+0.1.2 (Unreleased)
+------------------
+
+- search bar was not showing event type values not inside vocabulary [keul]
+
 0.1.1
--------------------
+-----
 
 - Help text fields on the form #80 [fdelia]
 
 0.1.0
--------------------
+-----
 
 - Initial release
