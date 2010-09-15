@@ -1,11 +1,12 @@
 Changelog
 =========
 
-0.2.0 (Unreleased)
+0.2.0 (2010-09-15)
 ------------------
 
 * search bar was not showing event type values not inside vocabulary [keul]
 * template changes due to monet.calendar.extensions changes [keul]
+* new category: "Festivals" [keul]
 
 0.1.1
 -----

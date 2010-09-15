@@ -26,6 +26,7 @@ _PROPERTIES = [
                                                        'Guided tours',
                                                        'Prizes and competitions',
                                                        'Books',
+                                                       'Festivals',
                                                        'Other events')),]
 
 def import_various(context):
@@ -56,6 +57,4 @@ def setUpIndexes(context, portal):
     else:
         pc.addIndex(name='getMunicipality',type='FieldIndex',extra={'indexed_attrs': 'getMunicipality',})
         portal.plone_log("Added '%s' (%s) to the catalog.\n" % ('getMunicipality', 'FieldIndex'))
-        
-    return 'done!'
     
