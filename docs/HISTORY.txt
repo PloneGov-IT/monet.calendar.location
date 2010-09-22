@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 * fix in the show/hide command when the content is in portal_factory [keul]
+* XHTML validation fixes [keul]
 
 0.2.0 (2010-09-15)
 ------------------

@@ -47,8 +47,7 @@
 	                            tal:repeat="eventT usedEventTypes"
 	                            tal:content="python: eventT=='all_events' and all_events_label or view.getEventTypeName(eventT) or eventT"
 	                            tal:attributes="value python: view.valueGetEventType(eventT);
-	                            				selected python: view.valueGetEventType(eventT) == view.getDefaultEventType();
-	                            				id eventT">
+	                            				selected python: view.valueGetEventType(eventT) == view.getDefaultEventType();">
 								dummy
 						</option>
 				</select>
@@ -120,18 +119,11 @@
 	                            tal:repeat="municipality municipality_list"
 	                            tal:content="python: view.getMunicipalityValue(municipality)"
 	                            tal:attributes="value municipality;
-	                            				selected python: municipality == view.getDefaultMunicipality(); 
-	                            				id municipality">
+	                            				selected python: municipality == view.getDefaultMunicipality();">
 								dummy
 						</option>
 				</select>
 		      </td>
-		      <input class="searchBarPath"
-				name="path"
-				id="path"
-				type="hidden"
-				tal:attributes="value subsite_path;"
-				/>
 		      <td>
 		      	  <input class="searchButton allowMultiSubmit"
 				    id="searchEvents"
@@ -142,5 +134,13 @@
 		      </td>
 			</tr>
 		</table>
+
+		<input class="searchBarPath"
+				name="path"
+				id="path"
+				type="hidden"
+				tal:attributes="value subsite_path;"
+				/>
+
     </form>
 </div>
