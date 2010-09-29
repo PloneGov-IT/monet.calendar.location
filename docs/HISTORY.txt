@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.1 (Unreleased)
+0.2.1 (2010-09-29)
 ------------------
 
 * fix in the show/hide command when the content is in portal_factory [keul]
