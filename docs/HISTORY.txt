@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.2 (2010-??-??) unreleased
+0.2.2 (2010-11-11)
 ------------------
 
 * updated the template of search bar to have an alphabetic order for "event type" [mirco]
