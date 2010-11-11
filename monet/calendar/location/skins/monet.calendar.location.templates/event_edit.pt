@@ -98,7 +98,7 @@
                           tal:content="python: view.getTranslatedSchemaLabel(fieldset)"
                           tal:attributes="id string:fieldsetlegend-${fieldsetid}"
                           tal:condition="not:sole_fieldset" />
-	                <tal:main_customized condition="python:fieldsetid=='default'">
+	                <tal:main_customized condition="python:fieldsetid=='default' and hasattr(here,'cadence') and hasattr(here,'slots')">
 	                    <metal:fieldMacro use-macro="python:here.widget('title', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('description', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('eventType', mode='edit')" />
@@ -153,7 +153,7 @@
 	                    <metal:fieldMacro use-macro="python:here.widget('annotations', mode='edit')" />
 
 					</tal:main_customized>
-	                <tal:main_notcustomized condition="python:fieldsetid!='default'">
+	                <tal:main_notcustomized condition="python:fieldsetid!='default' or not hasattr(here,'cadence') or not hasattr(here,'slots')">
 	                  <tal:fields repeat="field python:schematas[fieldset].editableFields(here, visible_only=True)">
 	                    <metal:fieldMacro use-macro="python:here.widget(field.getName(), mode='edit')" />
 	                  </tal:fields>

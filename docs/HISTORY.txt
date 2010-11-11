@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 * updated the template of search bar to have an alphabetic order for "event type" [mirco]
+* compatibility with old events [mirco]
 
 0.2.1 (2010-09-29)
 ------------------
