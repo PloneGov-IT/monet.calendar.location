@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.3.0 (Unreleased)
+------------------
+
+* dependency from MasterSelectWidget [keul]
+* z3c.autoinclude support [keul]
+* some template chages for Plone 4 compatibility [keul]
+
 0.2.3 (2010-11-17)
 ------------------
 
