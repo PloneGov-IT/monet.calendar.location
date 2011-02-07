@@ -62,6 +62,18 @@
                         </span>
                 	</td>
                 </tr>
+                <tr tal:condition="context/getExcept">
+                	<th i18n:translate="event_excepts">Except</th>
+                	<td>
+                		<ul>
+	                		<li class="monetEventDtexcept"
+							      tal:repeat="exceptDate context/getExcept"
+	                			  tal:content="python:here.toLocalizedTime(exceptDate, long_format=0)">
+	                			  Except dates
+	                        </li>
+						</ul>
+                	</td>
+                </tr>
                 <tr tal:condition="python: here.getLocation() or here.getAddress()"
                 	tal:define="location here/getLocation|nothing;
                 				address here/getAddress|nothing">
