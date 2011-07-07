@@ -6,12 +6,8 @@ from Products.CMFCore.utils import getToolByName
 
 _PROPERTIES = [
         dict(name='special_event_types', type_='lines', value=('Exhibitions',)),
-        dict(name='event_types', type_='lines', value=('Trade fairs, expositions and markets',
-                                                       'Markets',
-                                                       'Conventions and round tables',
-                                                       'Conferences, seminars and workshops',
-                                                       'Concerts',
-                                                       'Performances',
+        dict(name='event_types', type_='lines', value=('Trade fairs, expositions',
+                                                       'Conferences, conventions and seminars',
                                                        'Exhibitions',
                                                        'Theatre',
                                                        'Music',
@@ -20,14 +16,11 @@ _PROPERTIES = [
                                                        'Folklore and festivals',
                                                        'Circuses and street performances',
                                                        'Sports and games',
-                                                       "Children's events",
-                                                       'Openings, unveilings',
-                                                       'Memorial days',
-                                                       'Guided tours',
+                                                       'Street and exhibition markets',
+                                                       'Multiple events',
+                                                       'Religious festivals',
                                                        'Prizes and competitions',
-                                                       'Books',
-                                                       'Festivals',
-                                                       'Other events')),]
+                                                       'Courses, work experience, workshops')),]
 
 def import_various(context):
     if context.readDataFile('monet.calendar.location-various.txt') is None:
