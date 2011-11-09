@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.3.3 (2011-11-10)
+------------------
+
+* added the indexer 'comune_title' to save the title of municipality to use it directly without convert the value 
+  stored by vocabulary [mirco]
+
 0.3.2 (2011-10-03)
 ------------------
 

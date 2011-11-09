@@ -52,9 +52,10 @@ def setUpProperties(context, site):
 
 def setUpIndexes(context, portal):
     pc = portal.portal_catalog
-    if 'getMunicipality' in pc.indexes():
-        portal.plone_log("Found the related index in the catalog, nothing changed.\n")
-    else:
-        pc.addIndex(name='getMunicipality',type='FieldIndex',extra={'indexed_attrs': 'getMunicipality',})
-        portal.plone_log("Added '%s' (%s) to the catalog.\n" % ('getMunicipality', 'FieldIndex'))
+    for index in ['getMunicipality','comune_title']:
+        if index in pc.indexes():
+            portal.plone_log("Found the related index in the catalog, nothing changed.\n")
+        else:
+            pc.addIndex(name=index,type='FieldIndex',extra={'indexed_attrs': index,})
+            portal.plone_log("Added '%s' (%s) to the catalog.\n" % (index, 'FieldIndex'))
     
