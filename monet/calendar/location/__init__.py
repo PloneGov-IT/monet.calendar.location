@@ -1,7 +1,7 @@
 from monet.calendar.event.content.event import MonetEvent
 from monet.calendar.event.config import PROJECTNAME
 from Products.MasterSelectWidget.MasterSelectWidget import MasterSelectWidget
-from redturtle.entiterritoriali import _all_regioni, _all_province, _all_comuni, EntiVocabulary
+from redturtle.entiterritoriali import _all_regioni, EntiVocabulary
 from redturtle.entiterritoriali.vocabulary import mapDisplayList
 from Products.Archetypes.atapi import DisplayList
 from Products.Archetypes import atapi
