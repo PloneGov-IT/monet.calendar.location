@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.4.0 (2011-11-27)
+------------------
+
+* added browser layer and removed overrides.zcml to customize viewlet and event view [mirco]
+
 0.3.3 (2011-11-10)
 ------------------
 

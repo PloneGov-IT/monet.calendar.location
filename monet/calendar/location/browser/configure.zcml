@@ -4,6 +4,14 @@
     i18n_domain="monet.calendar.location">
 
   <include package="plone.app.contentmenu" />
+  
+  <browser:page
+    for="monet.calendar.event.interfaces.IMonetEvent"
+    name="event_view"
+    template="event_view.pt"
+    permission="zope2.View"
+	layer="..interfaces.ICalendarLocaionLayer"
+    />
 
   <browser:resourceDirectory
   	name="monet.calendar.location.stylesheets"
