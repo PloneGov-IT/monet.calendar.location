@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.4.1 (2011-12-01) unreleased
+------------------
+
+* fixed the Plone 4 compatibility [mirco]
+* hide the viewlet plone.belowcontentbody into the event view template [mirco]
+
 0.4.0 (2011-11-27)
 ------------------
 
