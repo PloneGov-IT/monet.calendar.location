@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.4.1-unreleased'
+version = '0.4.1'
 
 setup(name='monet.calendar.location',
       version=version,
