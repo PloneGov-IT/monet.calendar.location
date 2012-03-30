@@ -104,11 +104,12 @@
 	                    <metal:fieldMacro use-macro="python:here.widget('description', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('eventType', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('image', mode='edit')" />
-						<metal:fieldMacro use-macro="python:here.widget('imageAlt', mode='edit')" />
+			    <metal:fieldMacro use-macro="python:here.widget('imageAlt', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('startDate', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('endDate', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('cadence', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('except', mode='edit')" />
+	                    <metal:fieldMacro use-macro="python:here.widget('including', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('slots', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('time', mode='edit')" />
 	                    <metal:fieldMacro use-macro="python:here.widget('cost', mode='edit')" />
