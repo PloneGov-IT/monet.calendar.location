@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.4.6 (2014-10-13)
+------------------
+
+* Plone 4.3 compatibility release [mirof]
+* Added MANIFEST file [keul]
+
 0.4.2 (2012-03-30)
 ------------------
 
