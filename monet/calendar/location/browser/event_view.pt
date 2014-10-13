@@ -131,14 +131,14 @@
                			</tal:url>
                     </td>
                 </tr>
-				<tr tal:condition="python: here.computeRelatedItems()">
+				<tr tal:define="related python:here.restrictedTraverse('get_related_items')()" tal:condition="python:related">
 					<th i18n:translate="heading_attachments">Attachments</th>
 					<td>
 						<div class="relatedItems"
 						    tal:define="wtool context/portal_workflow;
 							            normalizeString nocall:context/@@plone/normalizeString;
                                         getInfoFor python:wtool.getInfoFor;">
-						        <tal:relatedItems tal:define="related python:here.computeRelatedItems();">
+						        <tal:relatedItems>
 						            <tal:block tal:condition="python:related">
 					                    <ul class="visualNoMarker">
 					                    <tal:related tal:repeat="item related"
